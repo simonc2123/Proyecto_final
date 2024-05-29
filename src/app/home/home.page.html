@@ -1,20 +1,58 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Alumnos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!-- Carril 1 -->
+      <ion-col size="4">
+        <div style="background-color: #ffddc1; color: black">
+          <!-- Añade el estilo color: black; -->
+          <h2>Carril 1</h2>
+          <ion-card *ngFor="let alumno of carril1Alumnos$ | async">
+            <ion-card-header
+              [ngStyle]="{'background-color': getColor(alumno.seccion)}"
+            >
+              <ion-card-title>{{ alumno.nombre }}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <!-- Carril 2 -->
+      <ion-col size="4">
+        <div style="background-color: #a0e7e5; color: black">
+          <!-- Añade el estilo color: black; -->
+          <h2>Carril 2</h2>
+          <ion-card *ngFor="let alumno of carril2Alumnos$ | async">
+            <ion-card-header
+              [ngStyle]="{'background-color': getColor(alumno.seccion)}"
+            >
+              <ion-card-title>{{ alumno.nombre }}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <!-- Carril 3 -->
+      <ion-col size="4">
+        <div style="background-color: #ffe8e5; color: black">
+          <!-- Añade el estilo color: black; -->
+          <h2>Carril 3</h2>
+          <ion-card *ngFor="let alumno of carril3Alumnos$ | async">
+            <ion-card-header
+              [ngStyle]="{'background-color': getColor(alumno.seccion)}"
+            >
+              <ion-card-title>{{ alumno.nombre }}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
